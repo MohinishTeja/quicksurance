@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quicksurance</title>
+
+
+    <style>
+        .container{
+ width: 100%;
+ position: absolute;
+ z-index: 1;
+}
+.progressbar li{
+ float: left;
+ width: 20%;
+ position: relative;
+ text-align: center;
+}
+.progressbar{
+  counter-reset: step;
+  list-style: none;
+}
+.progressbar li:before{
+  content:counter(step);
+  counter-increment: step;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #bebebe;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  line-height: 27px;
+  background: white;
+  color: #bebebe;
+  text-align: center;
+  font-weight: bold;
+}
+
+.progressbar li:after{
+  content: '';
+  position: absolute;
+  width:100%;
+  height: 3px;
+  background: #979797;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+
+.progressbar li:first-child:after{
+content: none;
+
+}
+
+.progressbar li.active + li:after{
+ background: #3aac5d;
+}
+.progressbar li.active + li:before{
+border-color: #3aac5d;
+background: #3aac5d;
+color: white
+}
+    </style>
+</head>
+<body>
+
+  
+</nav><script type="text/javascript"
+src="https://studio.alan.app/web/lib/alan_lib.js"></script>
+<script>
+ var alanBtnInstance = alanBtn({
+   key: "e633a9e6fda980e12ff9f3ee75c193942e956eca572e1d8b807a3e2338fdd0dc/stage",
+   onCommand: function (commandData) {
+     if (commandData.command === "vomitp") {
+       //call client code that will react on the received command
+       create()
+     }
+   },
+   rootEl: document.getElementById("alan-btn"),
+ });
+</script>
+<div class="alan-btn"></div>
+
+  <h1>Welcome to your Dashboard!</h1>
+  <h1>Your Total Complaints-1</h1>
+  <div class="ji">
+    <h1>New Insurances-</h1>
+    <h2 id="kooo" style="visibility: hidden;">Car Insurance</h2>
+
+  </div>
+  <h1>Progress of Complaint</h1>
+    <div class="root">
+        <div class="container">
+             <ul class="progressbar">
+               <li class="active">Claim Initiated</li>
+               <li class="active">Photos Uploaded</li>
+               <li>Initial Check</li>
+               <li>Further Check</li>
+               <li>Claim Approved</li>
+             </ul>
+         </div>
+     </div>
+<script>
+  
+
+ function create(){
+     document.getElementById("kooo").style.visibility="visible";
+ }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
